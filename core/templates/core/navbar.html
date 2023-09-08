@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex bd-highlight">
+        <div class="p-2 flex-grow-1 bd-highlight">
+            <a href={% url 'home' %} ><img src="{% static 'core/image/logo.png' %}" alt="error"></a>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="p-2 bd-highlight">
+            <a href={% url 'logout' %} class="btn btn-primary">LOG-OUT</a>
+        </div>
+        {% else %}
+        <div class="p-2 bd-highlight">
+            <a href={% url 'login' %} class="btn btn-primary">LOG-IN</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
