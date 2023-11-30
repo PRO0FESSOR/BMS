@@ -31,7 +31,7 @@
             </div>
             <div class="p-2 bd-highlight">
               <select class="form-select" aria-label="Find Employees" name="employee">
-                <option selected>Open this select menu</option>
+                <option selected>{{user}}</option>
                 
                 <option value="AISHWARYA_BACCHE">AISHWARYA_BACCHE</option>
                 <option value="AISHWARYA_GADGE">AISHWARYA_GADGE</option>
@@ -70,6 +70,8 @@
 <div class="col-sm-12">
 
   {% comment %} card code  {% endcomment %}
+
+  {% comment %} <p>Date Range = {{fromdate}} - {{todate}} and Username = {{user}}</p> {% endcomment %}
   
     {% for data in user_data %}
     <div class="d-flex justify-content-between my-5">

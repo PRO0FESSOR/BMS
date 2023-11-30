@@ -23,6 +23,8 @@ urlpatterns = [
     path('login/',views.user_login,name="login"),
     path('logout/',views.user_logout,name="logout"),
     path('',views.home,name="home"),
+    path('downloads/',views.downloads,name="downloads"),
+    path('download/',views.download,name="download"),
     path('description/<str:user>/',views.description,name="description"),
     
 ]

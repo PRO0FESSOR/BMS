@@ -5,64 +5,71 @@
 
 <div class="row mx-5">
   <div class="col-sm-12">
-      <form class="row" action={% url 'home' %} method="POST" id="post-form">
-        {% csrf_token %}
-        
-        <div class="d-flex align-items-start mb-3">
-            <div class="p-2 bd-highlight">
-              <input type="text" class="form-control" placeholder="{{fromdate}}" name="currdate" onfocus="this.type='date'" onblur="this.type='text'" >
-            </div>
-            <div class="p-2 bd-highlight">
-              <P style='font-size:27px;'>&#8596;</P>
-            </div>
-            <div class="p-2 bd-highlight">
-              <input type="text" class="form-control" placeholder="{{todate}}" name="currdating" onfocus="this.type='date'" onblur="this.type='text'" >
-            </div>
-            <div class="p-2 bd-highlight">
-              <div class="form-check form-switch">
-                {%if data3 == "on" %}
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler" checked>
-                {% else %}
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler">
-                {% endif %}
-                <label class="form-check-label" for="flexSwitchCheckChecked">Working Hours</label>
+    <div class="d-flex justify-content-start">
+      <div>
+        <form class="row" action={% url 'home' %} method="POST" id="post-form">
+          {% csrf_token %}
+          
+          <div class="d-flex align-items-start mb-3">
+              <div class="p-2 bd-highlight">
+                <input type="text" class="form-control" placeholder="{{fromdate}}" name="currdate" onfocus="this.type='date'" onblur="this.type='text'" style="width: 200px;">
               </div>
-            </div>
-            <div class="p-2 bd-highlight">
-              <select class="form-select" aria-label="Find Employees" name="employee">
-                <option selected>Open this select menu</option>
-                
-                <option value="AISHWARYA_BACCHE">AISHWARYA_BACCHE</option>
-                <option value="AISHWARYA_GADGE">AISHWARYA_GADGE</option>
-                <option value="AJAY_APSHETTI">AJAY_APSHETTI</option>
-                <option value="AKSHATA_LOTEKAR">AKSHATA_LOTEKAR</option>
-                <option value="NIRUDHA_CHAULKAR">ANIRUDHA_CHAULKAR</option>
-                <option value="CHETAN_GORI">CHETAN_GORI</option>
-                <option value="GAURAV_PATHWARDHAN">GAURAV_PATHWARDHAN</option>
-                <option value="MANISHA_KALE">MANISHA_KALE</option>
-                <option value="MRINAL_SHRIVASTAVA">MRINAL_SHRIVASTAVA</option>
-                <option value="NIMESH_RADIA">NIMESH_RADIA</option>
-                <option value="PARMESHWAR_KALE">PARMESHWAR_KALE</option>
-                <option value="POORVI_PATIL">POORVI_PATIL</option>
-                <option value="PRATHAMESH_PATEL">PRATHAMESH_PATEL</option>
-                <option value="PRIYANKA_HARATKAR">PRIYANKA_HARATKAR</option>
-                <option value="RAHUL_KANOJIYA">RAHUL_KANOJIYA</option>
-                <option value="RAJ_RAMTEKKAR">RAJ_RAMTEKKAR</option>
-                <option value="ROSHAN_KAKADE">ROSHAN_KAKADE</option>
-                <option value="SAMIR_WARANG">SAMIR_WARANG</option>
-                <option value="SHREYA_PATIL">SHREYA_PATIL</option>
-                <option value="SHUBHAM_OMASE">SHUBHAM_OMASE</option>
-                <option value="SHUBHAM_PARAKH">SHUBHAM_PARAKH</option>
-                <option value="SUDHANSHU_KASHYAP">SUDHANSHU_KASHYAP</option>
-                <option value="TEJASWINI_SORTE">TEJASWINI_SORTE</option>
-                <option value="GAYATRI_PAWAR">GAYATRI_PAWAR</option>
-              </select>
-            </div>
-            <div class="p-2 bd-highlight">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </div>
-        </div>
-      </form>
+              <div class="p-2 bd-highlight">
+                <P style='font-size:27px;'>&#8596;</P>
+              </div>
+              <div class="p-2 bd-highlight">
+                <input type="text" class="form-control" placeholder="{{todate}}" name="currdating" onfocus="this.type='date'" onblur="this.type='text'" style="width: 200px;" >
+              </div>
+              <div class="p-2 bd-highlight">
+                <div class="form-check form-switch">
+                  {%if data3 == "on" %}
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler" checked>
+                  {% else %}
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler">
+                  {% endif %}
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Working Hours</label>
+                </div>
+              </div>
+              <div class="p-2 bd-highlight">
+                <select class="form-select" aria-label="Find Employees" name="employee">
+                  <option selected>Open this select menu</option>
+                  
+                  <option value="AISHWARYA_BACCHE">AISHWARYA_BACCHE</option>
+                  <option value="AISHWARYA_GADGE">AISHWARYA_GADGE</option>
+                  <option value="AJAY_APSHETTI">AJAY_APSHETTI</option>
+                  <option value="AKSHATA_LOTEKAR">AKSHATA_LOTEKAR</option>
+                  <option value="NIRUDHA_CHAULKAR">ANIRUDHA_CHAULKAR</option>
+                  <option value="CHETAN_GORI">CHETAN_GORI</option>
+                  <option value="GAURAV_PATHWARDHAN">GAURAV_PATHWARDHAN</option>
+                  <option value="MANISHA_KALE">MANISHA_KALE</option>
+                  <option value="MRINAL_SHRIVASTAVA">MRINAL_SHRIVASTAVA</option>
+                  <option value="NIMESH_RADIA">NIMESH_RADIA</option>
+                  <option value="PARMESHWAR_KALE">PARMESHWAR_KALE</option>
+                  <option value="POORVI_PATIL">POORVI_PATIL</option>
+                  <option value="PRATHAMESH_PATEL">PRATHAMESH_PATEL</option>
+                  <option value="PRIYANKA_HARATKAR">PRIYANKA_HARATKAR</option>
+                  <option value="RAHUL_KANOJIYA">RAHUL_KANOJIYA</option>
+                  <option value="RAJ_RAMTEKKAR">RAJ_RAMTEKKAR</option>
+                  <option value="ROSHAN_KAKADE">ROSHAN_KAKADE</option>
+                  <option value="SAMIR_WARANG">SAMIR_WARANG</option>
+                  <option value="SHREYA_PATIL">SHREYA_PATIL</option>
+                  <option value="SHUBHAM_OMASE">SHUBHAM_OMASE</option>
+                  <option value="SHUBHAM_PARAKH">SHUBHAM_PARAKH</option>
+                  <option value="SUDHANSHU_KASHYAP">SUDHANSHU_KASHYAP</option>
+                  <option value="TEJASWINI_SORTE">TEJASWINI_SORTE</option>
+                  <option value="GAYATRI_PAWAR">GAYATRI_PAWAR</option>
+                </select>
+              </div>
+              <div class="p-2 bd-highlight">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </div>
+          </div>
+        </form>
+      </div>
+      {% comment %} <div class="p-2 bd-highlight"><a href={% url "downloads" %} class="btn btn-outline-primary">Download</a></div> {% endcomment %}
+    </div>
+      
+      
     </div>
 </div>
 
@@ -70,23 +77,26 @@
 
 <div class="col-sm-12">
     <h3 class="my-5">Home Page</h3>
+    {% comment %} <p>Date Range = {{fromdate}} - {{todate}} and Username = All Users</p> {% endcomment %}
     
     <div class="row">
       {% for data in data5 %}      
-      <div class="col-sm-4 my-2">
+      <div class="col-sm-6 " >
         <div class="card shadow p-3 mb-5 bg-body" style="border-radius: 50px;">
-          <div class="card-body ">
+          <div class="card-body " >
             <h1>{{data.0}}</h1>
-            <div class="d-flex justify-content-between" >
-              <div style=" width: 500px; height: 200px;" class="my-5">
-                <h5>Pro Time : {{data.1}}</h5>
-                <h5>Unpro Time : {{data.2}}</h5>
-                <h5>Idle Time : {{data.3}}</h5>
-                <h5>LogIn Time: {{ data.4|slice:"11:20"}}</h5>
-                <h5>LogOut Time: {{ data.5|slice:"11:20" }}</h5>
+            <div class="d-flex justify-content-between">
+              <div style=" width: 500px; height: 200px;" class="my-5" >
+                <h3>Pro Time : {{data.1}}</h3>
+                <h3>Unpro Time : {{data.2}}</h3>
+                <h3>Idle Time : {{data.3}}</h3>
+                <h3>LogIn Time: {{ data.4|slice:"11:20"}}</h3>
+                <h3>LogOut Time: {{ data.5|slice:"11:20" }}</h3>
 
                 </div>
-                <div  style="width: 500px; height: 200px;" id="chart{{ data.0 }}"></div>
+                <div>
+                    <canvas id="chart{{ data.0 }}" width="300" height="300"></canvas>
+                </div>
               </div>
               <a href={% url 'description' user=data.0 %} class="btn btn-primary">More..</a>
             </div>
@@ -95,39 +105,125 @@
 
       {% comment %} chart script {% endcomment %}
 
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-        var data = [
-          {
-            labels: ["Pro", "Unpro", "Idle"],
-            values: [{{ data.6 }}, {{ data.7 }}, {{ data.8 }}],
-            type: "pie",
-            hole: 0.5,
-            marker: {
-              colors: ["#3cb371", "#FFCE56", "#e86a47"],
-            },
-            textinfo: 'none', 
-          },
-        ];
+          document.addEventListener('DOMContentLoaded', function () {
+              var ctx = document.getElementById('chart{{ data.0 }}').getContext('2d');
+              let a = {{ data.6 }};
+              let b = {{ data.7 }}; 
+              let c = {{ data.8 }};
+              let total = a + b + c;
+              let pa = ((a / total) * 100).toFixed(1);;
+              let pb = ((b / total) * 100).toFixed(1);;
+              let pc = ((c / total) * 100).toFixed(1);;
 
-        var layout = {
-          width: 300,  
-          height: 300,
-          {% comment %} showlegend: false,  {% endcomment %}
-        };
+              var data = {
+                  labels: ["Pro", "Unpro", "Idle"],
+                  datasets: [{
+                      data: [pa,pb,pc],
+                      backgroundColor: ["#3cb371", "#FFCE56", "#e86a47"]
+                  }]
+              };
 
-        var config = {
-          displayModeBar: false, // Hide the top-right corner options
-          responsive: true, // Make the chart responsive
-          staticPlot: true, // Disable interactivity like hover and zoom
-        };
+              var options = {
+                responsive: true,
+                maintainAspectRatio: false,  
+                plugins: {
+                  legend: {
+                    display: false
+                  }
+                }              
+            };
 
-        Plotly.newPlot("chart{{ data.0 }}", data, layout,config);
+              new Chart(ctx, {
+                  type: 'doughnut',
+                  data: data,
+                  options: options
+              });
+          });
       </script>
+
       {% endfor %}
       
     </div>
 </div>
 
 {% endblock content %}
+
+
+
+{% comment %} AISHWARYA_BACCHE_2023-08-02_SS_VDO.avi
+
+
+<div class="row mx-5">
+  <div class="col-sm-12">
+    <div class="d-flex justify-content-start">
+      <div>
+        <form class="row" action={% url 'home' %} method="POST" id="post-form">
+          {% csrf_token %}
+
+          <div class="d-flex align-items-start mb-3">
+              <div class="p-2 bd-highlight">
+                <input type="text" class="form-control" placeholder="{{fromdate}}" name="currdate" onfocus="this.type='date'" onblur="this.type='text'" style="width: 200px;">
+              </div>
+              <div class="p-2 bd-highlight">
+                <P style='font-size:27px;'>&#8596;</P>
+              </div>
+              <div class="p-2 bd-highlight">
+                <input type="text" class="form-control" placeholder="{{todate}}" name="currdating" onfocus="this.type='date'" onblur="this.type='text'" style="width: 200px;">
+              </div>
+              <div class="p-2 bd-highlight">
+                <div class="form-check form-switch">
+                  {%if data3 == "on" %}
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler" checked>
+                  {% else %}
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="toggler">
+                  {% endif %}
+                  <label class="form-check-label" for="flexSwitchCheckChecked">Working Hours</label>
+                </div>
+              </div>
+              <div class="p-2 bd-highlight">
+                <select class="form-select" aria-label="Find Employees" name="employee">
+                  <option selected>Open this select menu</option>
+
+                  <option value="AISHWARYA_BACCHE">AISHWARYA_BACCHE</option>
+                  <option value="AISHWARYA_GADGE">AISHWARYA_GADGE</option>
+                  <option value="AJAY_APSHETTI">AJAY_APSHETTI</option>
+                  <option value="AKSHATA_LOTEKAR">AKSHATA_LOTEKAR</option>
+                  <option value="NIRUDHA_CHAULKAR">ANIRUDHA_CHAULKAR</option>
+                                    <option value="CHETAN_GORI">CHETAN_GORI</option>
+                  <option value="GAURAV_PATHWARDHAN">GAURAV_PATHWARDHAN</option>
+                  <option value="MANISHA_KALE">MANISHA_KALE</option>
+                  <option value="MRINAL_SHRIVASTAVA">MRINAL_SHRIVASTAVA</option>
+                  <option value="NIMESH_RADIA">NIMESH_RADIA</option>
+                  <option value="PARMESHWAR_KALE">PARMESHWAR_KALE</option>
+                  <option value="POORVI_PATIL">POORVI_PATIL</option>
+                  <option value="PRATHAMESH_PATEL">PRATHAMESH_PATEL</option>
+                  <option value="PRIYANKA_HARATKAR">PRIYANKA_HARATKAR</option>
+                  <option value="RAHUL_KANOJIYA">RAHUL_KANOJIYA</option>
+                  <option value="RAJ_RAMTEKKAR">RAJ_RAMTEKKAR</option>
+                  <option value="ROSHAN_KAKADE">ROSHAN_KAKADE</option>
+                  <option value="SAMIR_WARANG">SAMIR_WARANG</option>
+                  <option value="SHREYA_PATIL">SHREYA_PATIL</option>
+                  <option value="SHUBHAM_OMASE">SHUBHAM_OMASE</option>
+                  <option value="SHUBHAM_PARAKH">SHUBHAM_PARAKH</option>
+                  <option value="SUDHANSHU_KASHYAP">SUDHANSHU_KASHYAP</option>
+                  <option value="TEJASWINI_SORTE">TEJASWINI_SORTE</option>
+                  <option value="GAYATRI_PAWAR">GAYATRI_PAWAR</option>
+                </select>
+              </div>
+              <div class="p-2 bd-highlight">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="p-2 bd-highlight"><a href={% url "downloads" %} class="btn btn-outline-primary">Downloads Section</a></div>
+    </div>
+
+
+    </div>
+</div> {% endcomment %}
+
+
 

@@ -7,6 +7,10 @@ from django.db import connection
 from .query import getSelectedDate , updateSelectedDate , getFromToDT , getSwitchStatus , toggleSwitchStatus,glanceShortcut ,alltables,onlyglanceShortcut ,gettodate
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+from django.http import FileResponse
+from django.conf import settings
+import os
+
 
 
 # Create your views here.
@@ -121,7 +125,7 @@ def home(request):
         emp_value=None
         if request.method == 'POST':
 
-            print(request.get_full_path())
+            # print(request.get_full_path())
             From_datee=request.POST.get('currdate')
             To_datee=request.POST.get('currdating')
             toggle_value = request.POST.get('toggler')
@@ -155,4 +159,57 @@ def home(request):
         return HttpResponseRedirect('/login/')
 
 
+#downloads
 
+def downloads(request):
+    
+    toggle_value = ""
+    From_datee=getSelectedDate()
+    emp_value=None
+    if request.method == 'POST':
+
+            From_datee=request.POST.get('currdate')
+            To_datee=request.POST.get('currdating')
+            toggle_value = request.POST.get('toggler')
+            emp_value = request.POST.get('employee')
+
+            #handeling toggle
+
+            if toggle_value==None:
+                toggle_value="OFF"
+                
+            
+            print(f"toggle --> {toggle_value}")
+            
+            toggleSwitchStatus(toggle_value) 
+
+            #handeling datetime
+
+            if From_datee:
+                if To_datee:
+                    print(f"to-date -->{To_datee}")
+                    updateSelectedDate(From_datee,To_datee)
+                else:
+                    updateSelectedDate(From_datee,From_datee)
+
+                print(f"from-date -->{From_datee}")
+                
+
+            
+            #handeling search 
+
+            if emp_value!="Open this select menu":
+                print(f"selected user -->{emp_value}")
+            
+
+    return render(request,'core/downloads.html',{"fromdate":getSelectedDate(),"data3":getSwitchStatus(),"todate":gettodate()})
+
+
+#download
+
+def download(request):
+    file = os.path.join(settings.BASE_DIR,'media/logo.png')
+
+    fileOpened = open(file,'rb')
+
+    return FileResponse(fileOpened)
